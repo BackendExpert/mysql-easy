@@ -28,3 +28,7 @@
 - - user - your_user (user )
 - - password - your_password (password of database )
 - - database - your_database name (name of the Database )
+
+### SelectAllData(connection, tableName, callback)
+
+- This function to get all data in given table (view all data in selected table)
