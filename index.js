@@ -12,6 +12,17 @@ function connectToMySQL(host, user, password, database) {
     return connection;
 }
 
+// insert data function
+
+function insertData(tableName, data, callback) {
+    const query = `INSERT INTO ${tableName} SET ?`;
+    connection.query(query, data, (error, results, fields) => {
+        if (error) throw error;
+        callback(results.insertId);
+    });
+}
+
 module.exports = {
-    connectToMySQL
+    connectToMySQL,
+    insertData
 };
