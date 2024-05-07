@@ -1,9 +1,7 @@
-// mysqlConnection.js
 const mysql = require('mysql2');
 
-// Function to establish MySQL connection
 function connectToMySQL(host, user, password, database) {
-    // MySQL connection configuration
+
     const connection = mysql.createConnection({
         host: host,
         user: user,
@@ -11,7 +9,6 @@ function connectToMySQL(host, user, password, database) {
         database: database
     });
 
-    // Return the connection object
     return connection;
 }
 
