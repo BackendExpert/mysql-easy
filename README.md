@@ -75,4 +75,12 @@
 - - callback - return message
 
 
-## Usage of Package functions
+## How to use
+
+- install the package
+
+```js
+
+    npm i jkmysql-easy
+
+```
