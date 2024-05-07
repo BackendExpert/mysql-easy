@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/BackendExpert/mysql-easy/issues"
   },
-  "homepage": "https://github.com/BackendExpert/mysql-easy#readme"
+  "homepage": "https://github.com/BackendExpert/mysql-easy#readme",
+  "dependencies": {
+    "mysql2": "^3.9.7"
+  }
 }
