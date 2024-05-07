@@ -13,3 +13,5 @@
 | SelectAllData(connection, tableName, callback) | Select all data in named table in database | 
 | SelectData(connection, tableName, columnsData, callback) | Select one Recode according to Given column and value |
 | insertData(connection, tableName, data, callback) | Insert data to named table |
+| updateDataById(connection, tableName, UpdateColumn, id, newData, callback) | Update the data according to given column and value |
+| deleteDataById(connection, tableName, DeleteColumn, id, callback) | Delete the data according to given column and value |
