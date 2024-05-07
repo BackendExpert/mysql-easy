@@ -61,6 +61,15 @@
 - - connection - for connection function
 - - tableName - selected talbe
 - - UpdateColumn - the column name that want to update
-- - id - the column datathat want to update
+- - id - the column data that want to update
 - - newData - data that want to update 
+- - callback - return message
+
+### deleteDataById(connection, tableName, DeleteColumn, id, callback)
+
+- This function help to Delete data according to given column and value in named table
+- - connection - for connection function
+- - tableName - selected talbe
+- - DeleteColumn - the column  name that want to delete
+- - id - the column data that want to delete
 - - callback - return message
