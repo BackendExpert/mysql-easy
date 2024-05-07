@@ -116,7 +116,14 @@ mysqlHelper.SelectData(connection, tableName, columnsData, (results) => {
 })
 
 
+// function for insertData
 
+const tableName = 'users';
+const data = { username: 'John', email: 'email2@123.com', create_at: new Date(), role: "user", is_active: 1password: '123'};
+        
+mysqlHelper.insertData(connection, tableName, data, (insertedId) => {
+    console.log('Data Enterd Successful');
+});
 
 
 ```
