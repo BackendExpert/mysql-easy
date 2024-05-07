@@ -36,8 +36,8 @@ function insertData(connection, tableName, data, callback) {
     });
 }
 
-function updateDataById(connection, tableName, id, newData, callback) {
-    const query = `UPDATE ${tableName} SET ? WHERE id = ?`;
+function updateDataById(connection, tableName, UpdateColumn, id, newData, callback) {
+    const query = `UPDATE ${tableName} SET ? WHERE ${UpdateColumn} = ?`;
 
     connection.query(query, [newData, id], (error, results) => {
         if (error) throw error;
@@ -45,8 +45,8 @@ function updateDataById(connection, tableName, id, newData, callback) {
     });
 }
 
-function deleteDataById(connection, tableName, id, callback) {
-    const query = `DELETE FROM ${tableName} WHERE id = ?`;
+function deleteDataById(connection, tableName, DeleteColumn, id, callback) {
+    const query = `DELETE FROM ${tableName} WHERE ${DeleteColumn} = ?`;
 
     connection.query(query, [id], (error, results) => {
         if (error) throw error;
