@@ -73,3 +73,6 @@
 - - DeleteColumn - the column  name that want to delete
 - - id - the column data that want to delete
 - - callback - return message
+
+
+## Usage of Package functions
