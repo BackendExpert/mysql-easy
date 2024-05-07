@@ -25,3 +25,6 @@
 - in this function have 4 return values
 
 - - host - your_host (mostly localhost )
+- - user - your_user (user )
+- - password - your_password (password of database )
+- - database - your_database name (name of the Database )
