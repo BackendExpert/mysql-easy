@@ -1,6 +1,6 @@
 const mysql = require('mysql2');
 
-function ConnectDatabase(host, user, password, database) {
+function ConnectToDatabase(host, user, password, database) {
     return mysql.createConnection({
         host: host,
         user: user,
@@ -8,3 +8,17 @@ function ConnectDatabase(host, user, password, database) {
         database: database
     });
 }
+
+function selectDataByColumns(connection, tableName, columnsData, callback) {
+    const query = `SELECT * FROM ${tableName} WHERE ?`;
+
+    connection.query(query, columnsData, (error, results, fields) => {
+        if (error) throw error;
+        callback(results);
+    });
+}
+
+module.exports = {
+    ConnectToDatabase,
+    selectDataByColumns,
+};
