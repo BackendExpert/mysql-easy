@@ -24,4 +24,4 @@
 - This function help to make connection between node.js and the mysql Database 
 - in this function have 4 return values
 
-- - host -> your_host (mostly localhost )
+- - host - your_host (mostly localhost )
