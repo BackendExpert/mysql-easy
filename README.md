@@ -12,3 +12,4 @@
 | ConnectToDatabase(host, user, password, database) | to connect to Mysql Server |
 | SelectAllData(connection, tableName, callback) | Select all data in named table in database | 
 | SelectData(connection, tableName, columnsData, callback) | Select one Recode according to Given column and value |
+| insertData(connection, tableName, data, callback) | Insert data to named table |
