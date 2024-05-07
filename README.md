@@ -32,3 +32,6 @@
 ### SelectAllData(connection, tableName, callback)
 
 - This function to get all data in given table (view all data in selected table)
+- - connection - for connection function
+- - tableName - selected talbe
+- - callback - return data
