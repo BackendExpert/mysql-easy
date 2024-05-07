@@ -6,7 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BackendExpert/mysql-easy.git"
+  },
+  "keywords": [
+    "Mysql"
+  ],
+  "author": "JehanKandy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BackendExpert/mysql-easy/issues"
+  },
+  "homepage": "https://github.com/BackendExpert/mysql-easy#readme"
 }
