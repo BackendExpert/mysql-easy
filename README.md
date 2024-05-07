@@ -35,3 +35,4 @@
 - - connection - for connection function
 - - tableName - selected talbe
 - - callback - return data
+- if no data return will be 0
