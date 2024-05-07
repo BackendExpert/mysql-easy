@@ -84,3 +84,39 @@
     npm i jkmysql-easy
 
 ```
+
+- in server.js file in backend (node.js)
+
+``` js 
+
+const JKMysql = require('mysql-easy');
+
+```
+
+- and then work of functions
+
+``` js 
+
+// function for SelectAllData
+
+const tableName = 'name_of_the_table';
+
+mysqlHelper.SelectAllData(connection, tableName, (results) => {
+    console.log('The Fetched Data:', results);
+})
+
+
+// function for SelectData
+
+const tableName = 'name_of_the_table';
+const columnsData = { email: "email2@123.com" }; // Example columns data object
+
+mysqlHelper.SelectData(connection, tableName, columnsData, (results) => {
+    console.log('The Fetched Data:', results);
+})
+
+
+
+
+
+```
