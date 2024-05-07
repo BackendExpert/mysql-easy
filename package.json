@@ -11,7 +11,11 @@
     "url": "git+https://github.com/BackendExpert/mysql-easy.git"
   },
   "keywords": [
-    "Mysql"
+    "Mysql",
+    "NPM",
+    "Node",
+    "Beckend",
+    "React"
   ],
   "author": "JehanKandy",
   "license": "ISC",
