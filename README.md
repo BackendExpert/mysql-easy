@@ -36,3 +36,13 @@
 - - tableName - selected talbe
 - - callback - return data
 - if no data return will be 0
+
+### SelectData(connection, tableName, columnsData, callback)
+
+- same as above function
+- This function will get only selected row data 
+- - connection - for connection function
+- - tableName - selected talbe
+- - columnsData - selected column
+- - callback - return data
+- if no data return will be 0
