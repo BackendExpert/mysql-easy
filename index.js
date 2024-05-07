@@ -8,3 +8,7 @@ function ConnectDatabase(dbHost, dbUser, dbPass, dbName) {
         database: dbName
     })
 }
+
+module.exports = {
+    ConnectDatabase
+};
