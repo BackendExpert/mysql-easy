@@ -9,7 +9,7 @@ function ConnectToDatabase(host, user, password, database) {
     });
 }
 
-function selectDataByColumns(connection, tableName, columnsData, callback) {
+function SelectData(connection, tableName, columnsData, callback) {
     const query = `SELECT * FROM ${tableName} WHERE ?`;
 
     connection.query(query, columnsData, (error, results, fields) => {
@@ -20,5 +20,5 @@ function selectDataByColumns(connection, tableName, columnsData, callback) {
 
 module.exports = {
     ConnectToDatabase,
-    selectDataByColumns,
+    SelectData,
 };
