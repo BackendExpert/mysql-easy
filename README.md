@@ -3,6 +3,12 @@
 - This is the one of Backend Support NPM Package with Node.js
 - in this package the developer not need to type sql Queries
 
+## Releases
+
+### v1.0.0 - 07 May 2024 
+
+- initial release of Project
+
 
 ## Documentation
 
