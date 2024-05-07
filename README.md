@@ -54,3 +54,13 @@
 - - tableName - selected talbe
 - - data - data that want to insert to database
 - - callback - return message
+
+### updateDataById(connection, tableName, UpdateColumn, id, newData, callback)
+
+- This function help to update data according to given column and value in named table
+- - connection - for connection function
+- - tableName - selected talbe
+- - UpdateColumn - the column name that want to update
+- - id - the column datathat want to update
+- - newData - data that want to update 
+- - callback - return message
