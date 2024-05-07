@@ -15,3 +15,13 @@
 | insertData(connection, tableName, data, callback) | Insert data to named table |
 | updateDataById(connection, tableName, UpdateColumn, id, newData, callback) | Update the data according to given column and value |
 | deleteDataById(connection, tableName, DeleteColumn, id, callback) | Delete the data according to given column and value |
+
+
+## Function Explain
+
+### ConnectToDatabase(host, user, password, database)
+
+- This function help to make connection between node.js and the mysql Database 
+- in this function have 4 return values
+
+- - host -> your_host (mostly localhost )
