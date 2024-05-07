@@ -18,7 +18,17 @@ function SelectData(connection, tableName, columnsData, callback) {
     });
 }
 
+function insertData(connection, tableName, data, callback) {
+    const query = `INSERT INTO ${tableName} SET ?`;
+
+    connection.query(query, data, (error, results) => {
+        if (error) throw error;
+        callback(results.insertId);
+    });
+}
+
 module.exports = {
     ConnectToDatabase,
     SelectData,
+    insertData,
 };
