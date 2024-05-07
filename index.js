@@ -8,6 +8,15 @@ function ConnectToDatabase(host, user, password, database) {
         database: database
     });
 }
+function SelectAllData(connection, tableName, callback) {
+    const query = `SELECT * FROM ${tableName}`;
+
+    connection.query(query, (error, results, fields) => {
+        if (error) throw error;
+        callback(results);
+    });
+}
+
 
 function SelectData(connection, tableName, columnsData, callback) {
     const query = `SELECT * FROM ${tableName} WHERE ?`;
@@ -27,8 +36,29 @@ function insertData(connection, tableName, data, callback) {
     });
 }
 
-module.exports = {
+function updateDataById(connection, tableName, id, newData, callback) {
+    const query = `UPDATE ${tableName} SET ? WHERE id = ?`;
+
+    connection.query(query, [newData, id], (error, results) => {
+        if (error) throw error;
+        callback(results.affectedRows);
+    });
+}
+
+function deleteDataById(connection, tableName, id, callback) {
+    const query = `DELETE FROM ${tableName} WHERE id = ?`;
+
+    connection.query(query, [id], (error, results) => {
+        if (error) throw error;
+        callback(results.affectedRows);
+    });
+}
+
+module.exports = {    
     ConnectToDatabase,
+    SelectAllData,
     SelectData,
     insertData,
+    updateDataById,
+    deleteDataById
 };
