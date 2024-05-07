@@ -149,3 +149,9 @@ mysqlHelper.deleteDataById(connection, tableName, DeleteColumn, emailtoDelete, (
 
 
 ```
+
+
+## Developers
+
+- [JehanKandy](https://github.com/BackendExpert) - Developer
+- [Anupa Gamage](https://github.com/Anupa1998) - Developer
