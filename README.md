@@ -125,5 +125,27 @@ mysqlHelper.insertData(connection, tableName, data, (insertedId) => {
     console.log('Data Enterd Successful');
 });
 
+// function for updateDataById
+
+const tableName = "users"
+const idToUpdate = "email2@123.com"
+const updateColumn = "email"
+const newData = { username: 'Amara', role: "SuperAdmin" };
+
+mysqlHelper.updateDataById(connection, tableName, updateColumn, idToUpdate, newData, (affectedRows) => {
+    console.log('Data Updated Successful');
+});
+
+// function for updateDataById
+
+
+const tableName = 'users';
+const emailtoDelete = 'email@123.com'; // The ID of the row you want to update
+const DeleteColumn = 'email'
+
+mysqlHelper.deleteDataById(connection, tableName, DeleteColumn, emailtoDelete, (affectedRows) => {
+    console.log('Recode Deleted Succefull');
+});
+
 
 ```
