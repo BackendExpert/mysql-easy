@@ -1,5 +1,5 @@
 {
-  "name": "mysql-easy",
+  "name": "jkmysql-easy",
   "version": "1.0.0",
   "description": "NPM Package for Mysql",
   "main": "index.js",

@@ -1,4 +1,4 @@
-# MySQL Easy 
+# JKMySQL Easy 
 
 - This is the one of Backend Support NPM Package with Node.js
 - in this package the developer not need to type sql Queries
