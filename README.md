@@ -46,3 +46,11 @@
 - - columnsData - selected column
 - - callback - return data
 - if no data return will be 0
+
+### insertData(connection, tableName, data, callback)
+
+- This function help to insert data to database table
+- - connection - for connection function
+- - tableName - selected talbe
+- - data - data that want to insert to database
+- - callback - return message
