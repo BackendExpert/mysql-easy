@@ -36,7 +36,8 @@
 | Function | Description |
 |-----|------|
 | ConnectToDatabase(host, user, password, database) | to connect to Mysql Server |
-|  |  |
+| SendEmailConfig(EmailService, from, Senderpass) | confiarate the email trasnporter |
+| SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody) | Sending Email in Here 5 Veriables |
 
 
 ## Function Explain
