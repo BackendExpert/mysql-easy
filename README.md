@@ -189,6 +189,10 @@ JKMysql.deleteDataById(connection, tableName, DeleteColumn, emailtoDelete, (affe
 const JKMysql = require('mysql-easy');
 
 // configarate the email
+const transporter = JKmysql.SendEmailConfig("Gmail", process.env.EMAIL_USER, process.env.EMAIL_PASSWORD)
+
+// sending email
+
 
 
 
