@@ -15,8 +15,8 @@ function SendEmailConfig(EmailService, from, pass) {
     return  nodemailer.createTransport({
         service: EmailService,
         auth: {
-          user: process.env.from,
-          pass: process.env.pass
+          user: from,
+          pass: pass
         }
     });
 }
