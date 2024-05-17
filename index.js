@@ -11,7 +11,7 @@ function ConnectToDatabase(host, user, password, database) {
 }
 
 // v1.1.0--------------------
-function SendEmailMsg(EmailService, from, pass) {
+function SendEmailConfig(EmailService, from, pass) {
     return  nodemailer.createTransport({
         service: EmailService,
         auth: {
@@ -70,6 +70,7 @@ function deleteDataById(connection, tableName, DeleteColumn, id, callback) {
 
 module.exports = {    
     ConnectToDatabase,
+    SendEmailConfig,
     SelectAllData,
     SelectData,
     insertData,
