@@ -189,10 +189,21 @@ JKMysql.deleteDataById(connection, tableName, DeleteColumn, emailtoDelete, (affe
 const JKMysql = require('mysql-easy');
 
 // configarate the email
+// you must use veriable as `transporter` if not this will not working
 const transporter = JKmysql.SendEmailConfig("Gmail", process.env.EMAIL_USER, process.env.EMAIL_PASSWORD)
 
 // sending email
 
+const EmaiMe = "exmple@123.com"
+const EmailMeSubject = "Successfully work jkmysqlEasy"
+const EmalmeBody = "Working Successful"
+
+
+// you must use veriable as `transporter` if not this will not working
+JKmysql.SendEmailTo(transporter, process.env.EMAIL_USER, EmaiMe, EmailMeSubject, EmalmeBody)
+
+// optional
+return res.json({Status: "Success"})
 
 
 
