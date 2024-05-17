@@ -1,6 +1,6 @@
 {
   "name": "jkmysql-easy",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "NPM Package for Mysql",
   "main": "index.js",
   "type": "commonjs",
@@ -26,6 +26,7 @@
   "homepage": "https://github.com/BackendExpert/mysql-easy#readme",
   "dependencies": {
     "mysql": "^2.18.1",
-    "mysql2": "^3.9.7"
+    "mysql2": "^3.9.7",
+    "nodemailer": "^6.9.13"
   }
 }

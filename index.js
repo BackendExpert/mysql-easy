@@ -1,4 +1,5 @@
 const mysql = require('mysql2');
+const nodemailer = require('nodemailer');
 
 function ConnectToDatabase(host, user, password, database) {
     return mysql.createConnection({
@@ -8,6 +9,9 @@ function ConnectToDatabase(host, user, password, database) {
         database: database
     });
 }
+
+
+
 function SelectAllData(connection, tableName, callback) {
     const query = `SELECT * FROM ${tableName}`;
 
@@ -54,11 +58,44 @@ function deleteDataById(connection, tableName, DeleteColumn, id, callback) {
     });
 }
 
+// v1.1.0--------------------
+function SendEmailConfig(EmailService, from, Senderpass) {
+    return  nodemailer.createTransport({
+        service: EmailService,
+        auth: {
+          user: from,
+          pass: Senderpass
+        }
+    });
+}
+// v1.1.0--------------------
+
+// v1.1.0------------------------
+
+function SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody){
+    var mailOptions = {
+        from: EmailFrom,
+        to: EmailTo,
+        subject: EmailSubject,
+        text: EmailBody, 
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) throw error;
+        console.log('Email Successfully sent: ' + info.response);
+    });
+}
+
+// v1.1.0------------------------
+
+
 module.exports = {    
     ConnectToDatabase,
+    SendEmailConfig,
     SelectAllData,
     SelectData,
     insertData,
     updateDataById,
-    deleteDataById
+    deleteDataById,
+    SendEmailTo
 };
