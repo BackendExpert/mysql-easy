@@ -88,14 +88,23 @@
 - - newData - data that want to update 
 - - callback - return message
 
-### deleteDataById(connection, tableName, DeleteColumn, id, callback)
+### SendEmailConfig(EmailService, from, Senderpass)
 
-- This function help to Delete data according to given column and value in named table
-- - connection - for connection function
-- - tableName - selected talbe
-- - DeleteColumn - the column  name that want to delete
-- - id - the column data that want to delete
-- - callback - return message
+- This function configarate the email environment in nodejs
+- EmailService - mostly (Gmail) Plesase use Gmail other services are not still working
+- from - senders email address (this in .env file)
+- Senderpass - your App Password (this in .env file)
+
+
+
+### SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody)
+
+- This function help to send the Email
+- transporter - when you create the configaration of the email sending `SendEmailConfig(EmailService, from, Senderpass)`
+- EmailFrom - same as from in `SendEmailConfig(EmailService, from, Senderpass)`
+- EmailTo - you want to send email (receiver of email)
+- EmailSubject - subject of the Email
+- EmailBody - body (content of the Email)
 
 
 ## How to use
@@ -124,7 +133,7 @@ const JKMysql = require('mysql-easy');
 
 const tableName = 'name_of_the_table';
 
-mysqlHelper.SelectAllData(connection, tableName, (results) => {
+JKMysql.SelectAllData(connection, tableName, (results) => {
     console.log('The Fetched Data:', results);
 })
 
@@ -134,7 +143,7 @@ mysqlHelper.SelectAllData(connection, tableName, (results) => {
 const tableName = 'name_of_the_table';
 const columnsData = { email: "email2@123.com" }; // Example columns data object
 
-mysqlHelper.SelectData(connection, tableName, columnsData, (results) => {
+JKMysql.SelectData(connection, tableName, columnsData, (results) => {
     console.log('The Fetched Data:', results);
 })
 
@@ -144,7 +153,7 @@ mysqlHelper.SelectData(connection, tableName, columnsData, (results) => {
 const tableName = 'users';
 const data = { username: 'John', email: 'email2@123.com', create_at: new Date(), role: "user", is_active: 1, password: '123'};
         
-mysqlHelper.insertData(connection, tableName, data, (insertedId) => {
+JKMysql.insertData(connection, tableName, data, (insertedId) => {
     console.log('Data Enterd Successful');
 });
 
@@ -155,7 +164,7 @@ const idToUpdate = "email2@123.com"
 const updateColumn = "email"
 const newData = { username: 'Amara', role: "SuperAdmin" };
 
-mysqlHelper.updateDataById(connection, tableName, updateColumn, idToUpdate, newData, (affectedRows) => {
+JKMysql.updateDataById(connection, tableName, updateColumn, idToUpdate, newData, (affectedRows) => {
     console.log('Data Updated Successful');
 });
 
@@ -166,12 +175,25 @@ const tableName = 'users';
 const emailtoDelete = 'email@123.com'; // The ID of the row you want to update
 const DeleteColumn = 'email'
 
-mysqlHelper.deleteDataById(connection, tableName, DeleteColumn, emailtoDelete, (affectedRows) => {
+JKMysql.deleteDataById(connection, tableName, DeleteColumn, emailtoDelete, (affectedRows) => {
     console.log('Recode Deleted Succefull');
 });
 
 
 ```
+
+### v1.1.0 functions
+
+``` js 
+
+const JKMysql = require('mysql-easy');
+
+// configarate the email
+
+
+
+```
+ 
 
 
 ## Developers
