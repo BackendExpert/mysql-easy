@@ -79,12 +79,8 @@ function SendEmailTo(EmailFrom, EmailTo, EmailSubject, EmailBody){
     };
 
     transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-          return res.json({Status: "Success"})
-        }
+        if (error) throw error;
+        console.log('Email Successfully sent: ' + info.response);
     });
 }
 
