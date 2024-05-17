@@ -71,7 +71,21 @@ function deleteDataById(connection, tableName, DeleteColumn, id, callback) {
 // v1.1.0------------------------
 
 function SendEmailTo(EmailFrom, EmailTo, EmailSubject, EmailBody){
+    var mailOptions = {
+        from: EmailFrom,
+        to: EmailTo,
+        subject: EmailSubject,
+        text: EmailBody, 
+    };
 
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+          return res.json({Status: "Success"})
+        }
+    });
 }
 
 // v1.1.0------------------------
