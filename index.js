@@ -10,17 +10,7 @@ function ConnectToDatabase(host, user, password, database) {
     });
 }
 
-// v1.1.0--------------------
-function SendEmailConfig(EmailService, from, pass) {
-    return  nodemailer.createTransport({
-        service: EmailService,
-        auth: {
-          user: from,
-          pass: pass
-        }
-    });
-}
-// v1.1.0--------------------
+
 
 function SelectAllData(connection, tableName, callback) {
     const query = `SELECT * FROM ${tableName}`;
@@ -68,6 +58,18 @@ function deleteDataById(connection, tableName, DeleteColumn, id, callback) {
     });
 }
 
+// v1.1.0--------------------
+function SendEmailConfig(EmailService, from, Senderpass) {
+    return  nodemailer.createTransport({
+        service: EmailService,
+        auth: {
+          user: from,
+          pass: Senderpass
+        }
+    });
+}
+// v1.1.0--------------------
+
 // v1.1.0------------------------
 
 function SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody){
@@ -78,7 +80,7 @@ function SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody){
         text: EmailBody, 
     };
 
-    transporter.sendMail(mailOptions, function(error, info){
+    transporter.sendMail(mailOptions, (error, info) => {
         if (error) throw error;
         console.log('Email Successfully sent: ' + info.response);
     });

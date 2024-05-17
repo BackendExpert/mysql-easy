@@ -9,10 +9,17 @@
 
 - initial release of Project
 
+### v1.1.0 - 17 May 2024 
+
+- Updating NPM Package
+- Adding Sending Email
+
 
 ## Documentation
 
 - in order to this NPM package there are 6 functions
+
+### v1.0.0 - 07 May 2024 
 
 | Function | Description |
 |-----|------|
@@ -22,6 +29,14 @@
 | insertData(connection, tableName, data, callback) | Insert data to named table |
 | updateDataById(connection, tableName, UpdateColumn, id, newData, callback) | Update the data according to given column and value |
 | deleteDataById(connection, tableName, DeleteColumn, id, callback) | Delete the data according to given column and value |
+
+
+### v1.1.0 - 17 May 2024 
+
+| Function | Description |
+|-----|------|
+| ConnectToDatabase(host, user, password, database) | to connect to Mysql Server |
+|  |  |
 
 
 ## Function Explain
