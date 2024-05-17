@@ -87,6 +87,8 @@
 - - newData - data that want to update 
 - - callback - return message
 
+<hr>
+
 ### SendEmailConfig(EmailService, from, Senderpass)
 
 - This function configarate the email environment in nodejs
