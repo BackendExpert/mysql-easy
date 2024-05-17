@@ -99,6 +99,8 @@
 
 ### SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody)
 
+- IMPORTANT - you must use transporter as veriable in nodejs othervise this not working
+
 - This function help to send the Email
 - transporter - when you create the configaration of the email sending `SendEmailConfig(EmailService, from, Senderpass)`
 - EmailFrom - same as from in `SendEmailConfig(EmailService, from, Senderpass)`
