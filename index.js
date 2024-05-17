@@ -1,4 +1,5 @@
 const mysql = require('mysql2');
+const nodemailer = require('nodemailer');
 
 function ConnectToDatabase(host, user, password, database) {
     return mysql.createConnection({
@@ -8,6 +9,11 @@ function ConnectToDatabase(host, user, password, database) {
         database: database
     });
 }
+
+function SendEmailMsg(EmailService, from, pass) {
+
+}
+
 function SelectAllData(connection, tableName, callback) {
     const query = `SELECT * FROM ${tableName}`;
 

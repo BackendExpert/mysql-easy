@@ -26,6 +26,7 @@
   "homepage": "https://github.com/BackendExpert/mysql-easy#readme",
   "dependencies": {
     "mysql": "^2.18.1",
-    "mysql2": "^3.9.7"
+    "mysql2": "^3.9.7",
+    "nodemailer": "^6.9.13"
   }
 }
