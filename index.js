@@ -70,7 +70,7 @@ function deleteDataById(connection, tableName, DeleteColumn, id, callback) {
 
 // v1.1.0------------------------
 
-function SendEmailTo(EmailFrom, EmailTo, EmailSubject, EmailBody){
+function SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody){
     var mailOptions = {
         from: EmailFrom,
         to: EmailTo,
