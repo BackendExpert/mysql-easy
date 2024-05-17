@@ -68,6 +68,15 @@ function deleteDataById(connection, tableName, DeleteColumn, id, callback) {
     });
 }
 
+// v1.1.0------------------------
+
+function SendEmailTo(EmailFrom, EmailTo, EmailSubject, EmailBody){
+
+}
+
+// v1.1.0------------------------
+
+
 module.exports = {    
     ConnectToDatabase,
     SendEmailConfig,
@@ -75,5 +84,6 @@ module.exports = {
     SelectData,
     insertData,
     updateDataById,
-    deleteDataById
+    deleteDataById,
+    SendEmailTo
 };
