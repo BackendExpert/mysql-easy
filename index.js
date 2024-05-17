@@ -10,9 +10,17 @@ function ConnectToDatabase(host, user, password, database) {
     });
 }
 
+// v1.1.0--------------------
 function SendEmailMsg(EmailService, from, pass) {
-
+    return  nodemailer.createTransport({
+        service: EmailService,
+        auth: {
+          user: process.env.from,
+          pass: process.env.pass
+        }
+    });
 }
+// v1.1.0--------------------
 
 function SelectAllData(connection, tableName, callback) {
     const query = `SELECT * FROM ${tableName}`;
