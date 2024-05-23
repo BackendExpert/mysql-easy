@@ -88,6 +88,14 @@ function SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody){
 
 // v1.1.0------------------------
 
+// v1.2.0--------------------
+
+// function for filter data in table using AND gate
+
+
+
+// v1.2.0--------------------
+
 
 module.exports = {    
     ConnectToDatabase,
