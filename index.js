@@ -102,8 +102,15 @@ function SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody){
 // }
 
 function SelectDataAnd(connection, tableName, columnsData, callback) {
-    
-    const query = `SELECT * FROM ${tableName} WHERE ${columnsData}`;
+    let dataColumns = [];
+    function DataWithAnd(dataColumns, value){
+        const modValues = `${value} AND`;
+        dataColumns.push(modValues)
+    }
+
+    columnsData.forEach(value => DataWithAnd(dataColumns, value));
+    callback(dataColumns);
+    // const query = `SELECT * FROM ${tableName} WHERE ${columnsData}`;
 }
 
 
