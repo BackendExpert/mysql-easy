@@ -14,6 +14,10 @@
 - Updating NPM Package
 - Adding Sending Email
 
+### v1.2.0 - 23 May 2024 
+
+- Updating NPM Package
+- Adding Select Data by AND , OR
 
 ## Documentation
 
@@ -37,6 +41,14 @@
 |-----|------|
 | SendEmailConfig(EmailService, from, Senderpass) | confiarate the email trasnporter |
 | SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody) | Sending Email in Here 5 Veriables |
+
+
+### v1.2.0 - 23 May 2024 
+
+| Function | Description |
+|-----|------|
+| SelectByAnd(connection, tableName, dataColumns, conditions, callback) | AND operation Select Data |
+| SelectByOR(connection, tableName, dataColumns, conditions, callback) | OR operation Select Data |
 
 
 ## Function Explain
@@ -109,6 +121,21 @@
 - EmailSubject - subject of the Email
 - EmailBody - body (content of the Email)
 
+<hr>
+
+### function SelectByAnd(connection, tableName, dataColumns, conditions, callback)
+
+- in this function has 5 veriables
+- AND operation Select Data
+
+### function SelectByOR(connection, tableName, dataColumns, conditions, callback)
+
+- in this function has 5 veriables
+- OR operation Select Data
+
+### IMPORTANT
+
+- if you want to get all data via these 2 funtion you have to mention dataColumns and conditions as empty veriables if not this will not working
 
 ## How to use
 
@@ -212,6 +239,46 @@ return res.json({Status: "Success"})
 
 ```
  
+
+### v1.1.0 functions
+
+``` js 
+
+const JKMysql = require('mysql-easy');
+
+// AND opertaion Select data
+
+const tableName = 'tableName'
+const columns = []
+const conditions = {
+    coloumn: "coloumn",
+    coloumn: "coloumn",
+}
+JKmysql.SelectDataAnd(connection, tableName, columns, conditions, (query) => {
+    console.log(query)
+})
+
+// if you want to get all data set columns and conditions as empty 
+// if you not mentions the columns and conditions this will not warking
+
+// OR opertaion Select data
+
+const tableName = 'tableName'
+const columns = []
+const conditions = {
+    coloumn: "coloumn",
+    coloumn: "coloumn",
+}
+JKmysql.SelectDataOR(connection, tableName, columns, conditions, (query) => {
+    console.log(query)
+})
+
+// if you want to get all data set columns and conditions as empty 
+// if you not mentions the columns and conditions this will not warking
+
+
+```
+
 
 
 ## Developers

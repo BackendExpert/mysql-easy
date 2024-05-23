@@ -89,6 +89,67 @@ function SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody){
 // v1.1.0------------------------
 
 
+
+// v1.2.0---------------------
+
+// function SelectData(connection, tableName, columnsData, callback) {
+//     const query = `SELECT * FROM ${tableName} WHERE ?`;
+
+//     connection.query(query, columnsData, (error, results, fields) => {
+//         if (error) throw error;
+//         callback(results);
+//     });
+// }
+
+function SelectByAnd(connection, tableName, dataColumns, conditions, callback) {
+    const dataSelected = dataColumns && dataColumns.length > 0 ? dataColumns.join(', ') : '*';
+
+    let query = `SELECT ${dataSelected} FROM ${tableName}`;
+
+    const conditionKeys = Object.keys(conditions || {});
+    if (conditionKeys.length > 0) {
+      const whereClause = conditionKeys.map(key => `${key} = ?`).join(' AND ');
+      query += ` WHERE ${whereClause}`;
+    }
+
+    const conditionValues = conditionKeys.map(key => conditions[key]);
+
+    connection.query(query, conditionValues, (error, results, fields) => {
+  
+        if (error) {
+          callback(error, null);
+          return;
+        }
+  
+        callback( results);
+      });
+}
+
+
+function SelectByOR(connection, tableName, dataColumns, conditions, callback) {
+    const dataSelected = dataColumns && dataColumns.length > 0 ? dataColumns.join(', ') : '*';
+
+    let query = `SELECT ${dataSelected} FROM ${tableName}`;
+
+    const conditionKeys = Object.keys(conditions || {});
+    if (conditionKeys.length > 0) {
+      const whereClause = conditionKeys.map(key => `${key} = ?`).join(' OR ');
+      query += ` WHERE ${whereClause}`;
+    }
+
+    const conditionValues = conditionKeys.map(key => conditions[key]);
+
+    connection.query(query, conditionValues, (error, results, fields) => {
+  
+        if (error) {
+          callback(error, null);
+          return;
+        }
+  
+        callback( results);
+      });
+}
+
 module.exports = {    
     ConnectToDatabase,
     SendEmailConfig,
@@ -97,5 +158,7 @@ module.exports = {
     insertData,
     updateDataById,
     deleteDataById,
-    SendEmailTo
+    SendEmailTo,
+    SelectByAnd,
+    SelectByOR
 };
