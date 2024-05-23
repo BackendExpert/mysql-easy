@@ -101,19 +101,9 @@ function SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody){
 //     });
 // }
 
-function SelectDataAnd(connection, tableName, columnsData, callback) {
-    let obj = {}
-    function DataWithAND(obj, key, value) {
-        const modifiedValue = ` ${value} AND`;
-        obj[key] = modifiedValue;
-    }
-
-
-    for (const [key, value] of Object.entries(columnsData)) {
-        DataWithAND(obj, key, value);
-    }
-
-    console.log(obj);
+function SelectDataAnd(connection, tableName, conditions, callback) {
+    const query = `SELECT * FROM ${tableName}`;
+    
 }
 
 
