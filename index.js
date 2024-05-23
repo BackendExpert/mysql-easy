@@ -104,6 +104,9 @@ function SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody){
 function SelectDataAnd(connection, tableName, dataColumns, conditions, callback) {
     const table = tableName;
     const columns = dataColumns || '*';
+    const dataConditions = conditions || {}
+
+    
 }
 
 
