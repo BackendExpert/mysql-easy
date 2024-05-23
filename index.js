@@ -101,7 +101,7 @@ function SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody){
 //     });
 // }
 
-function SelectDataAnd(connection, tableName, dataColumns, conditions, callback) {
+function SelectByAnd(connection, tableName, dataColumns, conditions, callback) {
     const dataSelected = dataColumns && dataColumns.length > 0 ? dataColumns.join(', ') : '*';
 
     let query = `SELECT ${dataSelected} FROM ${tableName}`;
@@ -126,6 +126,30 @@ function SelectDataAnd(connection, tableName, dataColumns, conditions, callback)
 }
 
 
+function SelectByOR(connection, tableName, dataColumns, conditions, callback) {
+    const dataSelected = dataColumns && dataColumns.length > 0 ? dataColumns.join(', ') : '*';
+
+    let query = `SELECT ${dataSelected} FROM ${tableName}`;
+
+    const conditionKeys = Object.keys(conditions || {});
+    if (conditionKeys.length > 0) {
+      const whereClause = conditionKeys.map(key => `${key} = ?`).join(' OR ');
+      query += ` WHERE ${whereClause}`;
+    }
+
+    const conditionValues = conditionKeys.map(key => conditions[key]);
+
+    connection.query(query, conditionValues, (error, results, fields) => {
+  
+        if (error) {
+          callback(error, null);
+          return;
+        }
+  
+        callback( results);
+      });
+}
+
 module.exports = {    
     ConnectToDatabase,
     SendEmailConfig,
@@ -135,5 +159,6 @@ module.exports = {
     updateDataById,
     deleteDataById,
     SendEmailTo,
-    SelectDataAnd,
+    SelectByAnd,
+    SelectByOR
 };
