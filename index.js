@@ -111,6 +111,7 @@ function SelectDataAnd(connection, tableName, dataColumns, conditions, callback)
       const whereClause = conditionKeys.map(key => `${key} = ?`).join(' AND ');
       query += ` WHERE ${whereClause}`;
     }
+    const conditionValues = conditionKeys.map(key => conditions[key]);
 
     connection.query(query, conditionKeys, (error, results, fields) => {
   
