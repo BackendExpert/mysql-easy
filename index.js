@@ -89,6 +89,7 @@ function SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody){
 // v1.1.0------------------------
 
 
+
 module.exports = {    
     ConnectToDatabase,
     SendEmailConfig,
@@ -97,5 +98,6 @@ module.exports = {
     insertData,
     updateDataById,
     deleteDataById,
-    SendEmailTo
+    SendEmailTo,
+    
 };
