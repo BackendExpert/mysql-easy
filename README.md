@@ -237,6 +237,46 @@ return res.json({Status: "Success"})
 ```
  
 
+### v1.1.0 functions
+
+``` js 
+
+const JKMysql = require('mysql-easy');
+
+// AND opertaion Select data
+
+const tableName = 'tableName'
+const columns = []
+const conditions = {
+    coloumn: "coloumn",
+    coloumn: "coloumn",
+}
+JKmysql.SelectDataAnd(connection, tableName, columns, conditions, (query) => {
+    console.log(query)
+})
+
+// if you want to get all data set columns and conditions as empty 
+// if you not mentions the columns and conditions this will not warking
+
+// OR opertaion Select data
+
+const tableName = 'tableName'
+const columns = []
+const conditions = {
+    coloumn: "coloumn",
+    coloumn: "coloumn",
+}
+JKmysql.SelectDataOR(connection, tableName, columns, conditions, (query) => {
+    console.log(query)
+})
+
+// if you want to get all data set columns and conditions as empty 
+// if you not mentions the columns and conditions this will not warking
+
+
+```
+
+
 
 ## Developers
 
