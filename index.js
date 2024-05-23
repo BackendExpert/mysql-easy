@@ -101,9 +101,36 @@ function SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody){
 //     });
 // }
 
-function SelectDataAnd(connection, tableName, conditions, callback) {
+function SelectDataAnd(connection, tableName, dataColumns, conditions, callback) {
     const query = `SELECT * FROM ${tableName}`;
-    
+    const ValueConditions = conditions ? Object.values(conditions) : [];
+
+    if(dataColumns && dataColumns.length > 0){
+        const NameDataClumns = dataColumns.join(', ')
+        query = `SELECT ${NameDataClumns} FROM ${tableName}`
+    }
+
+    if(conditions && Object.keys(conditions).length > 0){
+        const Keycondition = Object.keys(conditions);
+        // const ValueConditions = Keycondition.map(key => conditions[key]);
+        const whereData = Keycondition.map(key => `${key} = ?`).join(' AND ')
+        query += `WHERE ${whereData}`;
+    }
+
+    // connection.query(query, ValueConditions, (err, results, fields) => {
+    //     if (err) throw err;
+    //     callback(results);
+    // })
+    connection.query(query, ValueConditions, (error, results, fields) => {
+  
+        if (typeof callback === 'function') {
+          if (error) {
+            callback(error, null);
+          } else {
+            callback(null, results);
+          }
+        }
+      });
 }
 
 
