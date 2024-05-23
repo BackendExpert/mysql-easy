@@ -103,12 +103,29 @@ function SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody){
 
 function SelectDataAnd(connection, tableName, dataColumns, conditions, callback) {
     const table = tableName;
-    const columns = dataColumns || '*';
+    const columns = dataColumns && dataColumns.length > 0 ? dataColumns.join(', ') : '*';
+
     const dataConditions = conditions || {}
 
     let query = `SELECT ${Array.isArray(columns) ? columns.join(', ') : columns} FROM ${table}`;
 
-    
+    const conditionKeys = Object.keys(conditions);
+    if (conditionKeys.length > 0) {
+      const whereClause = conditionKeys.map(key => `${key} = ?`).join(' AND ');
+      query += ` WHERE ${whereClause}`;
+    }
+
+    const conditionValues = conditionKeys.map(key => conditions[key]);
+
+    connection.query(query, conditionValues, (error, results, fields) => {
+        if (error) {
+          callback(error, null);
+          return;
+        }
+  
+        callback(null, results);
+      });
+
 }
 
 
