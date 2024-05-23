@@ -90,6 +90,22 @@ function SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody){
 
 
 
+// v1.2.0---------------------
+
+// function SelectData(connection, tableName, columnsData, callback) {
+//     const query = `SELECT * FROM ${tableName} WHERE ?`;
+
+//     connection.query(query, columnsData, (error, results, fields) => {
+//         if (error) throw error;
+//         callback(results);
+//     });
+// }
+
+function SelectDataAnd(connection, tableName, columnsData, callback) {
+
+}
+
+
 module.exports = {    
     ConnectToDatabase,
     SendEmailConfig,
@@ -99,5 +115,5 @@ module.exports = {
     updateDataById,
     deleteDataById,
     SendEmailTo,
-    
+    SelectDataAnd,
 };
