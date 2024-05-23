@@ -106,6 +106,8 @@ function SelectDataAnd(connection, tableName, dataColumns, conditions, callback)
     const columns = dataColumns || '*';
     const dataConditions = conditions || {}
 
+    let query = `SELECT ${Array.isArray(columns) ? columns.join(', ') : columns} FROM ${table}`;
+
     
 }
 
