@@ -102,7 +102,7 @@ function SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody){
 // }
 
 function SelectDataAnd(connection, tableName, columnsData, callback) {
-
+    const query = `SELECT * FROM ${tableName} WHERE ${columnsData}`;
 }
 
 
