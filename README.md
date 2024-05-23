@@ -43,7 +43,7 @@
 | SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody) | Sending Email in Here 5 Veriables |
 
 
-### v1.1.0 - 17 May 2024 
+### v1.2.0 - 23 May 2024 
 
 | Function | Description |
 |-----|------|
