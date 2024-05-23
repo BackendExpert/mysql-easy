@@ -133,6 +133,9 @@
 - in this function has 5 veriables
 - OR operation Select Data
 
+### IMPORTANT
+
+- if you want to get all data via these 2 funtion you have to mention dataColumns and conditions as empty veriables if not this will not working
 
 ## How to use
 
