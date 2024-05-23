@@ -14,6 +14,10 @@
 - Updating NPM Package
 - Adding Sending Email
 
+### v1.2.0 - 23 May 2024 
+
+- Updating NPM Package
+- Adding Select Data by AND , OR
 
 ## Documentation
 
@@ -29,6 +33,14 @@
 | insertData(connection, tableName, data, callback) | Insert data to named table |
 | updateDataById(connection, tableName, UpdateColumn, id, newData, callback) | Update the data according to given column and value |
 | deleteDataById(connection, tableName, DeleteColumn, id, callback) | Delete the data according to given column and value |
+
+
+### v1.1.0 - 17 May 2024 
+
+| Function | Description |
+|-----|------|
+| SendEmailConfig(EmailService, from, Senderpass) | confiarate the email trasnporter |
+| SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody) | Sending Email in Here 5 Veriables |
 
 
 ### v1.1.0 - 17 May 2024 
