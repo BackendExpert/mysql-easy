@@ -47,8 +47,8 @@
 
 | Function | Description |
 |-----|------|
-| SendEmailConfig(EmailService, from, Senderpass) | confiarate the email trasnporter |
-| SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody) | Sending Email in Here 5 Veriables |
+| SelectByAnd(connection, tableName, dataColumns, conditions, callback) | AND operation Select Data |
+| SelectByOR(connection, tableName, dataColumns, conditions, callback) | OR operation Select Data |
 
 
 ## Function Explain
@@ -120,6 +120,18 @@
 - EmailTo - you want to send email (receiver of email)
 - EmailSubject - subject of the Email
 - EmailBody - body (content of the Email)
+
+<hr>
+
+### function SelectByAnd(connection, tableName, dataColumns, conditions, callback)
+
+- in this function has 5 veriables
+- AND operation Select Data
+
+### function SelectByOR(connection, tableName, dataColumns, conditions, callback)
+
+- in this function has 5 veriables
+- OR operation Select Data
 
 
 ## How to use
