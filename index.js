@@ -123,13 +123,8 @@ function SelectDataAnd(connection, tableName, dataColumns, conditions, callback)
     // })
     connection.query(query, ValueConditions, (error, results, fields) => {
   
-        if (typeof callback === 'function') {
-          if (error) {
-            callback(error, null);
-          } else {
-            callback(null, results);
-          }
-        }
+        if (error) throw error;
+        callback(results);
       });
 }
 
