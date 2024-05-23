@@ -103,7 +103,7 @@ function SendEmailTo(transporter, EmailFrom, EmailTo, EmailSubject, EmailBody){
 
 function SelectDataAnd(connection, tableName, dataColumns, conditions, callback) {
     const query = `SELECT * FROM ${tableName}`;
-    const ValueConditions = conditions ? Object.values(conditions) : [];
+
 
     if(dataColumns && dataColumns.length > 0){
         const NameDataClumns = dataColumns.join(', ')
@@ -112,9 +112,9 @@ function SelectDataAnd(connection, tableName, dataColumns, conditions, callback)
 
     if(conditions && Object.keys(conditions).length > 0){
         const Keycondition = Object.keys(conditions);
-        // const ValueConditions = Keycondition.map(key => conditions[key]);
+        const ValueConditions = Keycondition.map(key => conditions[key]);
         const whereData = Keycondition.map(key => `${key} = ?`).join(' AND ')
-        query += `WHERE ${whereData}`;
+        query += ` WHERE ${whereData}`;
     }
 
     // connection.query(query, ValueConditions, (err, results, fields) => {
