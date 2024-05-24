@@ -158,7 +158,7 @@ function SearchData(connection, tableName, searchColumns, callback) {
     const seachData = Object.keys(searchColumns || {});
     if (seachData.length > 0) {
       const whereClause = seachData.map(key => `${key} = ?`).join(' AND ');
-      query += ` WHERE ${whereClause}`;
+      query += ` WHERE ${whereClause} LIKE `;
     }
 
     const SearchValues = seachData.map(key => searchColumns[key]);
