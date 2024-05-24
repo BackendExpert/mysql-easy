@@ -154,6 +154,24 @@ function SelectByOR(connection, tableName, dataColumns, conditions, callback) {
 
 function SearchData(connection, tableName, searchColumns, callback) {
     let query = `SELECT * FROM ${tableName}`;
+
+    const seachData = Object.keys(searchColumns || {});
+    if (seachData.length > 0) {
+      const whereClause = seachData.map(key => `${key} = ?`).join(' AND ');
+      query += ` WHERE ${whereClause}`;
+    }
+
+    const conditionValues = conditionKeys.map(key => conditions[key]);
+
+    connection.query(query, conditionValues, (error, results, fields) => {
+  
+        if (error) {
+          callback(error, null);
+          return;
+        }
+  
+        callback(query);
+    });
 }
 
 
