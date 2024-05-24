@@ -265,7 +265,7 @@ return res.json({Status: "Success"})
 ```
  
 
-### v1.1.0 functions
+### v1.2.0 functions
 
 ``` js 
 
