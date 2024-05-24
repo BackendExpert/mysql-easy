@@ -60,8 +60,7 @@
 
 | Function | Description |
 |-----|------|
-| SelectByAnd(connection, tableName, dataColumns, conditions, callback) | AND operation Select Data |
-| SelectByOR(connection, tableName, dataColumns, conditions, callback) | OR operation Select Data |
+| SearchData(connection, tableName, searchColumns, callback) | Seacrch data using LIKE |
 
 
 
