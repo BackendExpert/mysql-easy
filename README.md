@@ -176,7 +176,7 @@
 
 ``` js 
 
-const JKMysql = require('mysql-easy');
+const JKMysql = require('jkmysql-easy');
 
 ```
 
@@ -241,7 +241,7 @@ JKMysql.deleteDataById(connection, tableName, DeleteColumn, emailtoDelete, (affe
 
 ``` js 
 
-const JKMysql = require('mysql-easy');
+const JKMysql = require('jkmysql-easy');
 
 // configarate the email
 // you must use veriable as `transporter` if not this will not working
@@ -269,7 +269,7 @@ return res.json({Status: "Success"})
 
 ``` js 
 
-const JKMysql = require('mysql-easy');
+const JKMysql = require('jkmysql-easy');
 
 // AND opertaion Select data
 
@@ -309,7 +309,7 @@ JKmysql.SelectDataOR(connection, tableName, columns, conditions, (query) => {
 
 ``` js 
 
-const JKMysql = require('mysql-easy');
+const JKMysql = require('jkmysql-easy');
 
 const tableName = "tableName"
 const searchColumns = {
