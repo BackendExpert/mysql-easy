@@ -19,6 +19,11 @@
 - Updating NPM Package
 - Adding Select Data by AND , OR
 
+### v1.3.0 - 24 May 2024 
+
+- Updating NPM Package
+- Adding Search data Function
+
 ## Documentation
 
 - in order to this NPM package there are 6 functions
@@ -49,6 +54,15 @@
 |-----|------|
 | SelectByAnd(connection, tableName, dataColumns, conditions, callback) | AND operation Select Data |
 | SelectByOR(connection, tableName, dataColumns, conditions, callback) | OR operation Select Data |
+
+
+### v1.3.0 - 24 May 2024 
+
+| Function | Description |
+|-----|------|
+| SelectByAnd(connection, tableName, dataColumns, conditions, callback) | AND operation Select Data |
+| SelectByOR(connection, tableName, dataColumns, conditions, callback) | OR operation Select Data |
+
 
 
 ## Function Explain
