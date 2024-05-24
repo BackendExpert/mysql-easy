@@ -305,6 +305,16 @@ JKmysql.SelectDataOR(connection, tableName, columns, conditions, (query) => {
 ```
 
 
+### v1.3.0 functions
+
+``` js 
+
+const JKMysql = require('mysql-easy');
+
+
+```
+
+
 
 ## Developers
 
