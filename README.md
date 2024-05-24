@@ -150,6 +150,18 @@
 
 - if you want to get all data via these 2 funtion you have to mention dataColumns and conditions as empty veriables if not this will not working
 
+
+<hr>
+
+### SearchData(connection, tableName, searchColumns, callback)
+
+- This function has 4 veriables
+- - connection for connect database
+- - tableName for name of the table you need to search data
+- - searchColumns for colums that you use to seach data
+- - callback for get the result
+
+
 ## How to use
 
 - install the package
