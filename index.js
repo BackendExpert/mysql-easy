@@ -170,7 +170,7 @@ function SearchData(connection, tableName, searchColumns, callback) {
           return;
         }
   
-        callback(query);
+        callback(results);
     });
 }
 
