@@ -19,6 +19,11 @@
 - Updating NPM Package
 - Adding Select Data by AND , OR
 
+### v1.3.0 - 24 May 2024 
+
+- Updating NPM Package
+- Adding Search data Function
+
 ## Documentation
 
 - in order to this NPM package there are 6 functions
@@ -49,6 +54,14 @@
 |-----|------|
 | SelectByAnd(connection, tableName, dataColumns, conditions, callback) | AND operation Select Data |
 | SelectByOR(connection, tableName, dataColumns, conditions, callback) | OR operation Select Data |
+
+
+### v1.3.0 - 24 May 2024 
+
+| Function | Description |
+|-----|------|
+| SearchData(connection, tableName, searchColumns, callback) | Seacrch data using LIKE |
+
 
 
 ## Function Explain
@@ -137,6 +150,18 @@
 
 - if you want to get all data via these 2 funtion you have to mention dataColumns and conditions as empty veriables if not this will not working
 
+
+<hr>
+
+### SearchData(connection, tableName, searchColumns, callback)
+
+- This function has 4 veriables
+- - connection for connect database
+- - tableName for name of the table you need to search data
+- - searchColumns for colums that you use to seach data
+- - callback for get the result
+
+
 ## How to use
 
 - install the package
@@ -151,7 +176,7 @@
 
 ``` js 
 
-const JKMysql = require('mysql-easy');
+const JKMysql = require('jkmysql-easy');
 
 ```
 
@@ -216,7 +241,7 @@ JKMysql.deleteDataById(connection, tableName, DeleteColumn, emailtoDelete, (affe
 
 ``` js 
 
-const JKMysql = require('mysql-easy');
+const JKMysql = require('jkmysql-easy');
 
 // configarate the email
 // you must use veriable as `transporter` if not this will not working
@@ -240,11 +265,11 @@ return res.json({Status: "Success"})
 ```
  
 
-### v1.1.0 functions
+### v1.2.0 functions
 
 ``` js 
 
-const JKMysql = require('mysql-easy');
+const JKMysql = require('jkmysql-easy');
 
 // AND opertaion Select data
 
@@ -266,8 +291,8 @@ JKmysql.SelectDataAnd(connection, tableName, columns, conditions, (query) => {
 const tableName = 'tableName'
 const columns = []
 const conditions = {
-    coloumn: "coloumn",
-    coloumn: "coloumn",
+    coloumn: "data",
+    coloumn2: "data2"
 }
 JKmysql.SelectDataOR(connection, tableName, columns, conditions, (query) => {
     console.log(query)
@@ -276,6 +301,24 @@ JKmysql.SelectDataOR(connection, tableName, columns, conditions, (query) => {
 // if you want to get all data set columns and conditions as empty 
 // if you not mentions the columns and conditions this will not warking
 
+
+```
+
+
+### v1.3.0 functions
+
+``` js 
+
+const JKMysql = require('jkmysql-easy');
+
+const tableName = "tableName"
+const searchColumns = {
+    coloumn: "data",
+    coloumn2: "data2"
+}
+JKmysql.SearchData(connection, tableName, searchColumns, (result) => {
+    console.log(result)
+})
 
 ```
 
