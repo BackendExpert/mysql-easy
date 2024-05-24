@@ -150,6 +150,13 @@ function SelectByOR(connection, tableName, dataColumns, conditions, callback) {
       });
 }
 
+// for search data 
+
+function SearchData(connection, tableName, searchColumns, callback) {
+    
+}
+
+
 module.exports = {    
     ConnectToDatabase,
     SendEmailConfig,
