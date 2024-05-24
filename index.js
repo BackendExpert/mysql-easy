@@ -161,9 +161,9 @@ function SearchData(connection, tableName, searchColumns, callback) {
       query += ` WHERE ${whereClause}`;
     }
 
-    const conditionValues = conditionKeys.map(key => conditions[key]);
+    const SearchValues = seachData.map(key => searchColumns[key]);
 
-    connection.query(query, conditionValues, (error, results, fields) => {
+    connection.query(query, SearchValues, (error, results, fields) => {
   
         if (error) {
           callback(error, null);
