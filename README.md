@@ -291,8 +291,8 @@ JKmysql.SelectDataAnd(connection, tableName, columns, conditions, (query) => {
 const tableName = 'tableName'
 const columns = []
 const conditions = {
-    coloumn: "coloumn",
-    coloumn: "coloumn",
+    coloumn: "data",
+    coloumn2: "data2"
 }
 JKmysql.SelectDataOR(connection, tableName, columns, conditions, (query) => {
     console.log(query)
@@ -311,6 +311,14 @@ JKmysql.SelectDataOR(connection, tableName, columns, conditions, (query) => {
 
 const JKMysql = require('mysql-easy');
 
+const tableName = "tableName"
+const searchColumns = {
+    coloumn: "data",
+    coloumn2: "data2"
+}
+JKmysql.SearchData(connection, tableName, searchColumns, (result) => {
+    console.log(result)
+})
 
 ```
 
