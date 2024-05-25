@@ -167,6 +167,17 @@
 - - searchColumns for colums that you use to seach data
 - - callback for get the result
 
+<hr>
+
+### CountData(connection, tableName, conditions, callback)
+
+- This function has 4 veriables
+- - connection for connect database
+- - tableName for name of the table you need to search data
+- - conditions that you need to filter data
+- - callback for get the result
+
+
 
 ## How to use
 
