@@ -181,7 +181,16 @@ function CountData(connection, tableName, countas, conditions, callback){
         const whereClause = conditions.join(' AND ')
         query += ` WHERE ${whereClause}`;
     }
-    
+
+    connection.query(query, (err, results) => {
+        if(err) {
+            callback(err, null)
+            return
+        }
+
+        countas = results[0].count
+        callback(countas)
+    })
 }
 
 
