@@ -66,7 +66,7 @@
 
 | Function | Description |
 |-----|------|
-| SearchData(connection, tableName, searchColumns, callback) | Seacrch data using LIKE |
+| CountData(connection, tableName, conditions, callback) | Countdata function |
 
 
 
