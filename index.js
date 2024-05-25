@@ -175,6 +175,11 @@ function SearchData(connection, tableName, searchColumns, callback) {
 }
 
 
+function CountData(connection, tableName, countas, conditions, callback){
+    
+}
+
+
 module.exports = {    
     ConnectToDatabase,
     SendEmailConfig,
