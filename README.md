@@ -340,6 +340,25 @@ JKmysql.SearchData(connection, tableName, searchColumns, (result) => {
 ```
 
 
+### v1.4.0 functions
+
+``` js 
+
+const JKMysql = require('jkmysql-easy');
+
+const tableName = "tableName"
+const searchColumns = {
+    coloumn: "data",
+    coloumn2: "data2"
+}
+JKmysql.SearchData(connection, tableName, searchColumns, (result) => {
+    console.log(result)
+})
+
+```
+
+
+
 
 ## Developers
 
