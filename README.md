@@ -62,6 +62,12 @@
 |-----|------|
 | SearchData(connection, tableName, searchColumns, callback) | Seacrch data using LIKE |
 
+### v1.4.0 - 25 May 2024 
+
+| Function | Description |
+|-----|------|
+| CountData(connection, tableName, conditions, callback) | Countdata function |
+
 
 
 ## Function Explain
@@ -160,6 +166,17 @@
 - - tableName for name of the table you need to search data
 - - searchColumns for colums that you use to seach data
 - - callback for get the result
+
+<hr>
+
+### CountData(connection, tableName, conditions, callback)
+
+- This function has 4 veriables
+- - connection for connect database
+- - tableName for name of the table you need to search data
+- - conditions that you need to filter data
+- - callback for get the result
+
 
 
 ## How to use
@@ -321,6 +338,28 @@ JKmysql.SearchData(connection, tableName, searchColumns, (result) => {
 })
 
 ```
+
+
+### v1.4.0 functions
+
+``` js 
+
+const JKMysql = require('jkmysql-easy');
+
+const tableName = 'tableName'
+
+// if you not need to use conditions keep the condition as empty
+// if you not mentions the conditions veriable the function not working
+const conditions = []
+
+JkMysql.CountData(connection, tableName, conditions, (result) => {
+    if(result){
+        return res.json({StdResult: result})
+    }
+})
+
+```
+
 
 
 
