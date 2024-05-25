@@ -346,7 +346,10 @@ JKmysql.SearchData(connection, tableName, searchColumns, (result) => {
 
 const JKMysql = require('jkmysql-easy');
 
-const tableName = 'students'
+const tableName = 'tableName'
+
+// if you not need to use conditions keep the condition as empty
+// if you not mentions the conditions veriable the function not working
 const conditions = []
 
 JkMysql.CountData(connection, tableName, conditions, (result) => {
