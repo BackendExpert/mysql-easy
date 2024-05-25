@@ -62,6 +62,12 @@
 |-----|------|
 | SearchData(connection, tableName, searchColumns, callback) | Seacrch data using LIKE |
 
+### v1.4.0 - 25 May 2024 
+
+| Function | Description |
+|-----|------|
+| SearchData(connection, tableName, searchColumns, callback) | Seacrch data using LIKE |
+
 
 
 ## Function Explain
