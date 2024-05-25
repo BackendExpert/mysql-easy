@@ -176,7 +176,7 @@ function SearchData(connection, tableName, searchColumns, callback) {
 
 
 function CountData(connection, tableName, countas, conditions, callback){
-    let query = `SELECT COUNT(*) AS count FROM ${tableName}`
+    let query = `SELECT COUNT(*) AS ${countas} FROM ${tableName}`
     if(conditions && conditions.length > 0) {
         const whereClause = conditions.join(' AND ')
         query += ` WHERE ${whereClause}`;
@@ -187,9 +187,8 @@ function CountData(connection, tableName, countas, conditions, callback){
             callback(err, null)
             return
         }
-
-        countas = results[0].count
-        callback(countas)
+        const count = results[0].count;
+        callback(count)
     })
 }
 
