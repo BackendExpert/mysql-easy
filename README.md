@@ -346,13 +346,13 @@ JKmysql.SearchData(connection, tableName, searchColumns, (result) => {
 
 const JKMysql = require('jkmysql-easy');
 
-const tableName = "tableName"
-const searchColumns = {
-    coloumn: "data",
-    coloumn2: "data2"
-}
-JKmysql.SearchData(connection, tableName, searchColumns, (result) => {
-    console.log(result)
+const tableName = 'students'
+const conditions = []
+
+JkMysql.CountData(connection, tableName, conditions, (result) => {
+    if(result){
+        return res.json({StdResult: result})
+    }
 })
 
 ```
